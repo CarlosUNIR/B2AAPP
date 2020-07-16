@@ -1,0 +1,579 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2D24D8F1-DA79-45CF-8C1B-CFD2AC74F717}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>GestionFacturacion.My.MyApplication</StartupObject>
+    <RootNamespace>GestionFacturacion</RootNamespace>
+    <AssemblyName>GestionFacturacion</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>GestionFacturacion.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>GestionFacturacion.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>logo_grifo_y_os1_icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.7.4137.9688, Culture=neutral, PublicKeyToken=a4292a325f69b123, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="FirmaXadesNet, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\FirmaXadesNet.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xades, Version=1.0.7.0, Culture=neutral, PublicKeyToken=52bc0bff8bc72d48, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\Microsoft.Xades.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="cCrypto.vb" />
+    <Compile Include="cFirmaXADES.vb" />
+    <Compile Include="cIniFile.vb" />
+    <Compile Include="DataSetFINCAS.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetFINCAS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetPresentacionFacturacionListado.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetPresentacionFacturacionListado.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetPresentacionFacturacionListado.vb">
+      <DependentUpon>DataSetPresentacionFacturacionListado.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetPRESENTACIONFACTURACIONPeriodos.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetPRESENTACIONFACTURACIONPeriodos.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetRUTASGRAL.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetRUTASGRAL.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetSeriesListado.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetSeriesListado.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetZONASLista.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetZONASLista.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetZONASListado.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetZONASListado.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="FaceB2BCustomAlgorithmSuite.vb" />
+    <Compile Include="FaceB2BCustomEndpointBehavior.vb" />
+    <Compile Include="facturaeService.vb" />
+    <Compile Include="frmFacturacion.Designer.vb">
+      <DependentUpon>frmFacturacion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmFacturacion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.Designer.vb">
+      <DependentUpon>frmMain.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Service References\FACE_Gob_WS\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\FACE_Gob_WS_pruebas\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\SII_GobCan_WS\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="siiService.vb" />
+    <Compile Include="Web References\es.gob.face.webservice\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\org.gobiernodecanarias.www\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="frmFacturacion.resx">
+      <DependentUpon>frmFacturacion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DataSetFINCAS.xsc">
+      <DependentUpon>DataSetFINCAS.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetFINCAS.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetFINCAS.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSetFINCAS.xss">
+      <DependentUpon>DataSetFINCAS.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetPresentacionFacturacionListado.xsc">
+      <DependentUpon>DataSetPresentacionFacturacionListado.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetPresentacionFacturacionListado.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>DataSetPresentacionFacturacionListado.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DataSetPresentacionFacturacionListado.xss">
+      <DependentUpon>DataSetPresentacionFacturacionListado.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetPRESENTACIONFACTURACIONPeriodos.xsc">
+      <DependentUpon>DataSetPRESENTACIONFACTURACIONPeriodos.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetPRESENTACIONFACTURACIONPeriodos.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetPRESENTACIONFACTURACIONPeriodos.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSetPRESENTACIONFACTURACIONPeriodos.xss">
+      <DependentUpon>DataSetPRESENTACIONFACTURACIONPeriodos.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetRUTASGRAL.xsc">
+      <DependentUpon>DataSetRUTASGRAL.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetRUTASGRAL.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetRUTASGRAL.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSetRUTASGRAL.xss">
+      <DependentUpon>DataSetRUTASGRAL.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetSeriesListado.xsc">
+      <DependentUpon>DataSetSeriesListado.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetSeriesListado.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetSeriesListado.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSetSeriesListado.xss">
+      <DependentUpon>DataSetSeriesListado.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetZONASLista.xsc">
+      <DependentUpon>DataSetZONASLista.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetZONASLista.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetZONASLista.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSetZONASLista.xss">
+      <DependentUpon>DataSetZONASLista.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetZONASListado.xsc">
+      <DependentUpon>DataSetZONASListado.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetZONASListado.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetZONASListado.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSetZONASListado.xss">
+      <DependentUpon>DataSetZONASListado.xsd</DependentUpon>
+    </None>
+    <None Include="GestionFacturacion.ini">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+    <None Include="SELLO-DE-ENTIDAD-SGAD.crt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="SELLO-ENTIDAD-SGAD-PRUEBAS.crt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Service References\FACE_Gob_WS\FacturaSSPPWebServiceProxy.wsdl" />
+    <None Include="Service References\FACE_Gob_WS\GestionFacturacion.FACE_Gob_WS.AnularFacturaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FACE_Gob_WS\GestionFacturacion.FACE_Gob_WS.ConsultarAdministracionesRepositorioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FACE_Gob_WS\GestionFacturacion.FACE_Gob_WS.ConsultarAdministracionesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FACE_Gob_WS\GestionFacturacion.FACE_Gob_WS.ConsultarEstadosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FACE_Gob_WS\GestionFacturacion.FACE_Gob_WS.ConsultarFacturaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FACE_Gob_WS\GestionFacturacion.FACE_Gob_WS.ConsultarListadoFacturaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FACE_Gob_WS\GestionFacturacion.FACE_Gob_WS.consultarListadoFacturasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FACE_Gob_WS\GestionFacturacion.FACE_Gob_WS.ConsultarNIFsPorAdministracionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FACE_Gob_WS\GestionFacturacion.FACE_Gob_WS.ConsultarNIFsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FACE_Gob_WS\GestionFacturacion.FACE_Gob_WS.ConsultarRelacionesPorAdministracionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FACE_Gob_WS\GestionFacturacion.FACE_Gob_WS.ConsultarRelacionesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FACE_Gob_WS\GestionFacturacion.FACE_Gob_WS.EnviarFacturaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FACE_Gob_WS_pruebas\FacturaSSPPWebServiceProxy.wsdl" />
+    <None Include="Service References\FACE_Gob_WS_pruebas\GestionFacturacion.FACE_Gob_WS_pruebas.AnularFacturaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FACE_Gob_WS_pruebas\GestionFacturacion.FACE_Gob_WS_pruebas.ConsultarAdministracionesRepositorioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FACE_Gob_WS_pruebas\GestionFacturacion.FACE_Gob_WS_pruebas.ConsultarAdministracionesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FACE_Gob_WS_pruebas\GestionFacturacion.FACE_Gob_WS_pruebas.ConsultarEstadosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FACE_Gob_WS_pruebas\GestionFacturacion.FACE_Gob_WS_pruebas.ConsultarFacturaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FACE_Gob_WS_pruebas\GestionFacturacion.FACE_Gob_WS_pruebas.ConsultarListadoFacturaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FACE_Gob_WS_pruebas\GestionFacturacion.FACE_Gob_WS_pruebas.consultarListadoFacturasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FACE_Gob_WS_pruebas\GestionFacturacion.FACE_Gob_WS_pruebas.ConsultarNIFsPorAdministracionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FACE_Gob_WS_pruebas\GestionFacturacion.FACE_Gob_WS_pruebas.ConsultarNIFsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FACE_Gob_WS_pruebas\GestionFacturacion.FACE_Gob_WS_pruebas.ConsultarRelacionesPorAdministracionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FACE_Gob_WS_pruebas\GestionFacturacion.FACE_Gob_WS_pruebas.ConsultarRelacionesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FACE_Gob_WS_pruebas\GestionFacturacion.FACE_Gob_WS_pruebas.EnviarFacturaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SII_GobCan_WS\ConsultaLR.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SII_GobCan_WS\GestionFacturacion.SII_GobCan_WS.AnulacionLRFacturasEmitidasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SII_GobCan_WS\GestionFacturacion.SII_GobCan_WS.ConsultaLRFactInformadasAgrupadasClienteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SII_GobCan_WS\GestionFacturacion.SII_GobCan_WS.ConsultaLRFactInformadasClienteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SII_GobCan_WS\GestionFacturacion.SII_GobCan_WS.ConsultaLRFacturasEmitidasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SII_GobCan_WS\GestionFacturacion.SII_GobCan_WS.RespuestaConsultaLRFactInformadasAgrupadasClienteType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SII_GobCan_WS\GestionFacturacion.SII_GobCan_WS.RespuestaConsultaLRFactInformadasClienteType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SII_GobCan_WS\GestionFacturacion.SII_GobCan_WS.RespuestaConsultaLRFacturasEmitidasType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SII_GobCan_WS\GestionFacturacion.SII_GobCan_WS.RespuestaLRBajaFEmitidasType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SII_GobCan_WS\GestionFacturacion.SII_GobCan_WS.RespuestaLRFEmitidasType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SII_GobCan_WS\GestionFacturacion.SII_GobCan_WS.SuministroLRFacturasEmitidasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SII_GobCan_WS\RespuestaConsultaLR.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SII_GobCan_WS\RespuestaSuministro.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SII_GobCan_WS\SuministroFactEmitidas.wsdl" />
+    <None Include="Service References\SII_GobCan_WS\SuministroInformacion.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SII_GobCan_WS\SuministroLR.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\es.gob.face.webservice\AnularFacturaResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\es.gob.face.webservice\ConsultarAdministracionesRepositorioResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\es.gob.face.webservice\ConsultarAdministracionesResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\es.gob.face.webservice\ConsultarEstadosResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\es.gob.face.webservice\ConsultarFacturaResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\es.gob.face.webservice\ConsultarListadoFacturaResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\es.gob.face.webservice\ConsultarNIFsPorAdministracionResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\es.gob.face.webservice\ConsultarNIFsResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\es.gob.face.webservice\ConsultarRelacionesPorAdministracionResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\es.gob.face.webservice\ConsultarRelacionesResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\es.gob.face.webservice\EnviarFacturaResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\es.gob.face.webservice\FacturaSSPPWebServiceProxy.wsdl" />
+    <None Include="Web References\es.gob.face.webservice\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <None Include="Web References\org.gobiernodecanarias.www\ConsultaLR.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\org.gobiernodecanarias.www\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <None Include="Web References\org.gobiernodecanarias.www\RespuestaConsultaLR.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\org.gobiernodecanarias.www\RespuestaConsultaLRFactInformadasAgrupadasClienteType.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\org.gobiernodecanarias.www\RespuestaConsultaLRFactInformadasClienteType.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\org.gobiernodecanarias.www\RespuestaConsultaLRFacturasEmitidasType.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\org.gobiernodecanarias.www\RespuestaLRBajaFEmitidasType.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\org.gobiernodecanarias.www\RespuestaLRFEmitidasType.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\org.gobiernodecanarias.www\RespuestaSuministro.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\org.gobiernodecanarias.www\SuministroFactEmitidas.wsdl" />
+    <None Include="Web References\org.gobiernodecanarias.www\SuministroInformacion.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\org.gobiernodecanarias.www\SuministroLR.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="BouncyCastle.Crypto.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FirmaXadesNet.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="logo_grifo_y_os1_icon.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Microsoft.Xades.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Service References\FACE_Gob_WS_pruebas\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <None Include="Service References\FACE_Gob_WS_pruebas\configuration.svcinfo" />
+    <None Include="Service References\FACE_Gob_WS_pruebas\configuration91.svcinfo" />
+    <None Include="Service References\FACE_Gob_WS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <None Include="Service References\FACE_Gob_WS\configuration.svcinfo" />
+    <None Include="Service References\FACE_Gob_WS\configuration91.svcinfo" />
+    <None Include="Service References\SII_GobCan_WS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <None Include="Service References\SII_GobCan_WS\configuration.svcinfo" />
+    <None Include="Service References\SII_GobCan_WS\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\FACE_Gob_WS\" />
+    <WCFMetadataStorage Include="Service References\FACE_Gob_WS_pruebas\" />
+    <WCFMetadataStorage Include="Service References\SII_GobCan_WS\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://www.gobiernodecanarias.org/tributos/portal/estatico/asistencia_contribuyente/wsdl/SuministroFactEmitidas.wsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\org.gobiernodecanarias.www\</RelPath>
+      <UpdateFromURL>http://www.gobiernodecanarias.org/tributos/portal/estatico/asistencia_contribuyente/wsdl/SuministroFactEmitidas.wsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>MySettings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>GestionFacturacion_org_gobiernodecanarias_www_siiService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="https://webservice.face.gob.es/facturasspp2%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\es.gob.face.webservice\</RelPath>
+      <UpdateFromURL>https://webservice.face.gob.es/facturasspp2%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>MySettings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>GestionFacturacion_es_gob_face_webservice_Service</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
