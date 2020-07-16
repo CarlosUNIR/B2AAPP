@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="utf-8"?>
+<schema xmlns:siiLR="https://www2.agenciatributaria.gob.es/static_files/common/internet/dep/aplicaciones/es/aeat/ssii/igic/ws/SuministroLR.xsd" xmlns:sii="https://www2.agenciatributaria.gob.es/static_files/common/internet/dep/aplicaciones/es/aeat/ssii/igic/ws/SuministroInformacion.xsd" elementFormDefault="qualified" targetNamespace="https://www2.agenciatributaria.gob.es/static_files/common/internet/dep/aplicaciones/es/aeat/ssii/igic/ws/SuministroLR.xsd" xmlns="http://www.w3.org/2001/XMLSchema">
+  <import schemaLocation="SuministroInformacion.xsd" namespace="https://www2.agenciatributaria.gob.es/static_files/common/internet/dep/aplicaciones/es/aeat/ssii/igic/ws/SuministroInformacion.xsd" />
+  <element name="SuministroLRFacturasEmitidas">
+    <complexType>
+      <complexContent mixed="false">
+        <extension base="sii:SuministroInformacion">
+          <sequence>
+            <element maxOccurs="10000" name="RegistroLRFacturasEmitidas" type="siiLR:LRfacturasEmitidasType" />
+          </sequence>
+        </extension>
+      </complexContent>
+    </complexType>
+  </element>
+  <complexType name="LRfacturasEmitidasType">
+    <annotation>
+      <documentation xml:lang="es">Datos correspondientes al libro de Facturas emitidas </documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="sii:RegistroSii">
+        <sequence>
+          <element name="IDFactura" type="sii:IDFacturaExpedidaType" />
+          <element name="FacturaExpedida" type="sii:FacturaExpedidaType">
+            <annotation>
+              <documentation xml:lang="es"> Factura correspondiente al libro de facturas expedidas. </documentation>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <element name="BajaLRFacturasEmitidas">
+    <complexType>
+      <complexContent mixed="false">
+        <extension base="sii:SuministroInformacionBaja">
+          <sequence>
+            <element maxOccurs="10000" name="RegistroLRBajaExpedidas" type="siiLR:LRBajaExpedidasType" />
+          </sequence>
+        </extension>
+      </complexContent>
+    </complexType>
+  </element>
+  <complexType name="LRBajaExpedidasType">
+    <annotation>
+      <documentation xml:lang="es">Datos correspondientes a la baja de Facturas emitidas </documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="sii:RegistroSii">
+        <sequence>
+          <element name="IDFactura" type="sii:IDFacturaExpedidaBCType" />
+          <element minOccurs="0" name="RefExterna" type="sii:TextMax60Type" />
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <element name="SuministroLRFacturasRecibidas">
+    <complexType>
+      <complexContent mixed="false">
+        <extension base="sii:SuministroInformacion">
+          <sequence>
+            <element maxOccurs="10000" name="RegistroLRFacturasRecibidas" type="siiLR:LRFacturasRecibidasType" />
+          </sequence>
+        </extension>
+      </complexContent>
+    </complexType>
+  </element>
+  <complexType name="LRFacturasRecibidasType">
+    <annotation>
+      <documentation xml:lang="es">Datos correspondientes al libro de Facturas recibidas</documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="sii:RegistroSii">
+        <sequence>
+          <element name="IDFactura" type="sii:IDFacturaRecibidaType" />
+          <element name="FacturaRecibida" type="sii:FacturaRecibidaType">
+            <annotation>
+              <documentation xml:lang="es"> Apunte correspondiente al libro de facturas recibidas. </documentation>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <element name="BajaLRFacturasRecibidas">
+    <complexType>
+      <complexContent mixed="false">
+        <extension base="sii:SuministroInformacionBaja">
+          <sequence>
+            <element maxOccurs="10000" name="RegistroLRBajaRecibidas" type="siiLR:LRBajaRecibidasType" />
+          </sequence>
+        </extension>
+      </complexContent>
+    </complexType>
+  </element>
+  <complexType name="LRBajaRecibidasType">
+    <annotation>
+      <documentation xml:lang="es">Datos correspondientes a la baja de Facturas recibidas </documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="sii:RegistroSii">
+        <sequence>
+          <element name="IDFactura" type="sii:IDFacturaRecibidaNombreBCType" />
+          <element minOccurs="0" name="RefExterna" type="sii:TextMax60Type" />
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <element name="SuministroLRBienesInversion">
+    <complexType>
+      <complexContent mixed="false">
+        <extension base="sii:SuministroInformacion">
+          <sequence>
+            <element maxOccurs="10000" name="RegistroLRBienesInversion" type="siiLR:LRBienesInversionType" />
+          </sequence>
+        </extension>
+      </complexContent>
+    </complexType>
+  </element>
+  <complexType name="LRBienesInversionType">
+    <annotation>
+      <documentation xml:lang="es">Datos correspondientes al libro de Bienes de inversi??n</documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="sii:RegistroSii">
+        <sequence>
+          <element name="IDFactura" type="sii:IDFacturaComunitariaType" />
+          <element name="BienesInversion" type="sii:BienDeInversionType">
+            <annotation>
+              <documentation xml:lang="es"> Apunte correspondiente al libro de bienes de inversion. </documentation>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <element name="BajaLRBienesInversion">
+    <complexType>
+      <complexContent mixed="false">
+        <extension base="sii:SuministroInformacionBaja">
+          <sequence>
+            <element maxOccurs="10000" name="RegistroLRBajaBienesInversion" type="siiLR:LRBajaBienesInversionType" />
+          </sequence>
+        </extension>
+      </complexContent>
+    </complexType>
+  </element>
+  <complexType name="LRBajaBienesInversionType">
+    <annotation>
+      <documentation xml:lang="es">Datos correspondientes al libro de Bienes de inversi??n</documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="sii:RegistroSii">
+        <sequence>
+          <element name="IDFactura" type="sii:IDFacturaComunitariaType" />
+          <element name="IdentificacionBien" type="sii:TextMax40Type" />
+          <element minOccurs="0" name="RefExterna" type="sii:TextMax60Type" />
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <element name="SuministroLRAgenciasViajes">
+    <complexType>
+      <complexContent mixed="false">
+        <extension base="sii:SuministroInformacion">
+          <sequence>
+            <element maxOccurs="10000" name="RegistroLRAgenciasViajes" type="siiLR:LRAgenciasViajesType" />
+          </sequence>
+        </extension>
+      </complexContent>
+    </complexType>
+  </element>
+  <complexType name="LRAgenciasViajesType">
+    <annotation>
+      <documentation xml:lang="es"> Apunte correspondiente a importes agencias viajes. </documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="sii:RegistroSii">
+        <sequence>
+          <element name="Contraparte" type="sii:PersonaFisicaJuridicaType">
+            <annotation>
+              <documentation xml:lang="es"> Contraparte de la operaci??n. Cliente en facturas emitidas. Proveedor en facturas recibidas. </documentation>
+            </annotation>
+          </element>
+          <element name="ImporteTotal" type="sii:ImporteSgn12.2Type" />
+          <element minOccurs="0" name="EntidadSucedida" type="sii:PersonaFisicaJuridicaUnicaESType" />
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <element name="BajaLRAgenciasViajes">
+    <complexType>
+      <complexContent mixed="false">
+        <extension base="sii:SuministroInformacionBaja">
+          <sequence>
+            <element maxOccurs="10000" name="RegistroLRBajaAgenciasViajes" type="siiLR:LRBajaAgenciasViajesType" />
+          </sequence>
+        </extension>
+      </complexContent>
+    </complexType>
+  </element>
+  <complexType name="LRBajaAgenciasViajesType">
+    <annotation>
+      <documentation xml:lang="es"> Apunte correspondiente importes agencias viajes. </documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="sii:RegistroSii">
+        <sequence>
+          <element name="Contraparte" type="sii:PersonaFisicaJuridicaType">
+            <annotation>
+              <documentation xml:lang="es"> Contraparte de la operaci??n. Cliente en facturas emitidas. Proveedor en facturas recibidas. </documentation>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <element name="SuministroLRCobrosMetalico">
+    <complexType>
+      <complexContent mixed="false">
+        <extension base="sii:SuministroInformacion">
+          <sequence>
+            <element maxOccurs="10000" name="RegistroLRCobrosMetalico" type="siiLR:LRCobrosMetalicoType" />
+          </sequence>
+        </extension>
+      </complexContent>
+    </complexType>
+  </element>
+  <complexType name="LRCobrosMetalicoType">
+    <annotation>
+      <documentation xml:lang="es"> Apunte correspondiente a importes recibidos en metalico. </documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="sii:RegistroSii">
+        <sequence>
+          <element name="Contraparte" type="sii:PersonaFisicaJuridicaType">
+            <annotation>
+              <documentation xml:lang="es"> Contraparte de la operaci??n. Cliente en facturas emitidas. Proveedor en facturas recibidas. </documentation>
+            </annotation>
+          </element>
+          <element name="ImporteTotal" type="sii:ImporteSgn12.2Type" />
+          <element minOccurs="0" name="EntidadSucedida" type="sii:PersonaFisicaJuridicaUnicaESType" />
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <element name="BajaLRCobrosMetalico">
+    <complexType>
+      <complexContent mixed="false">
+        <extension base="sii:SuministroInformacionBaja">
+          <sequence>
+            <element maxOccurs="10000" name="RegistroLRBajaCobrosMetalico" type="siiLR:LRBajaCobrosMetalicoType" />
+          </sequence>
+        </extension>
+      </complexContent>
+    </complexType>
+  </element>
+  <complexType name="LRBajaCobrosMetalicoType">
+    <annotation>
+      <documentation xml:lang="es"> Apunte correspondiente a importes recibidos en metalico. </documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="sii:RegistroSii">
+        <sequence>
+          <element name="Contraparte" type="sii:PersonaFisicaJuridicaType">
+            <annotation>
+              <documentation xml:lang="es"> Contraparte de la operaci??n. Cliente en facturas emitidas. Proveedor en facturas recibidas. </documentation>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <element name="SuministroLRCobrosEmitidas">
+    <annotation>
+      <documentation>Suministro de informaci??n de Cobros sobre el libro de registro de facturas expedidas</documentation>
+    </annotation>
+    <complexType>
+      <complexContent mixed="false">
+        <extension base="sii:SuministroInformacionCobrosPagos">
+          <sequence>
+            <element maxOccurs="10000" name="RegistroLRCobros" type="siiLR:LRCobrosEmitidasType" />
+          </sequence>
+        </extension>
+      </complexContent>
+    </complexType>
+  </element>
+  <element name="SuministroLRInmueblesAdicionales">
+    <annotation>
+      <documentation>Suministro de informaci??n de Inmuebles adicionales</documentation>
+    </annotation>
+    <complexType>
+      <complexContent mixed="false">
+        <extension base="sii:SuministroInformacionInmuebles">
+          <sequence>
+            <element maxOccurs="10000" name="RegistroLRInmueblesAdicionales" type="siiLR:LRInmueblesType" />
+          </sequence>
+        </extension>
+      </complexContent>
+    </complexType>
+  </element>
+  <complexType name="LRCobrosEmitidasType">
+    <sequence>
+      <element name="IDFactura" type="sii:IDFacturaExpedidaBCType" />
+      <element name="Cobros" type="sii:CobrosType" />
+    </sequence>
+  </complexType>
+  <complexType name="LRInmueblesType">
+    <sequence>
+      <element name="IDFactura" type="sii:IDFacturaExpedidaBCType" />
+      <element name="DatosInmueble" type="siiLR:InmueblesAdicionalType" />
+    </sequence>
+  </complexType>
+  <complexType name="InmueblesAdicionalType">
+    <sequence>
+      <element minOccurs="0" maxOccurs="10000" name="DetalleInmueble" type="sii:DatosInmuebleType" />
+    </sequence>
+  </complexType>
+  <element name="SuministroLRPagosRecibidas">
+    <annotation>
+      <documentation>Suministro de informaci??n de Pagos sobre el libro de registro de facturas recibidas</documentation>
+    </annotation>
+    <complexType>
+      <complexContent mixed="false">
+        <extension base="sii:SuministroInformacionCobrosPagos">
+          <sequence>
+            <element maxOccurs="10000" name="RegistroLRPagos" type="siiLR:LRPagosEmitidasType" />
+          </sequence>
+        </extension>
+      </complexContent>
+    </complexType>
+  </element>
+  <complexType name="LRPagosEmitidasType">
+    <sequence>
+      <element name="IDFactura" type="sii:IDFacturaRecibidaNombreBCType" />
+      <element name="Pagos" type="sii:PagosType" />
+    </sequence>
+  </complexType>
+</schema>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DiscoveryClientResultsFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Results>
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="http://www.gobiernodecanarias.org/tributos/portal/estatico/asistencia_contribuyente/wsdl/SuministroFactEmitidas.wsdl" filename="SuministroFactEmitidas.wsdl" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://www.gobiernodecanarias.org/tributos/portal/estatico/asistencia_contribuyente/wsdl/ConsultaLR.xsd" filename="ConsultaLR.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://www.gobiernodecanarias.org/tributos/portal/estatico/asistencia_contribuyente/wsdl/RespuestaConsultaLR.xsd" filename="RespuestaConsultaLR.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://www.gobiernodecanarias.org/tributos/portal/estatico/asistencia_contribuyente/wsdl/RespuestaSuministro.xsd" filename="RespuestaSuministro.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://www.gobiernodecanarias.org/tributos/portal/estatico/asistencia_contribuyente/wsdl/SuministroInformacion.xsd" filename="SuministroInformacion.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://www.gobiernodecanarias.org/tributos/portal/estatico/asistencia_contribuyente/wsdl/SuministroLR.xsd" filename="SuministroLR.xsd" />
+  </Results>
+</DiscoveryClientResultsFile>
